@@ -1,9 +1,10 @@
+import { UserModel } from './UserModel';
 import { BaseModelInterface } from './../interfaces/BaseModelInterface';
 import * as Sequelize from 'sequelize';
 import { ModelsInterface } from '../interfaces/ModelsInterface';
 
 export interface PostAttributes {
-    ud?: number;
+    id?: number;
     title?: string;
     content?: string;
     photo?: string;
@@ -43,7 +44,8 @@ export default(sequelize: Sequelize.Sequelize, Datatype: Sequelize.DataTypes) : 
     {
         tableName: 'posts'
     });
-
+    
+    
     Post.associate = (models: ModelsInterface): void => {
         Post.belongsTo(models.User, {
             foreignKey: {
@@ -51,8 +53,17 @@ export default(sequelize: Sequelize.Sequelize, Datatype: Sequelize.DataTypes) : 
                 field: 'author',
                 name: 'author'
             }
-        })
+        });
+        /*
+        Post.hasMany(models.User, {
+            as: 'parentChildren',
+            foreignKey: {
+                allowNull: false,
+                field: 'author'
+            },
+            onDelete: 'CASCADE'
+        });*/
     }
-
+    
     return Post;
 };

@@ -35,8 +35,9 @@ if(!db){
         });
 
     Object.keys(db).forEach((modelName: string) => {
-        if(db[modelName].assosciate) {
-            db[modelName].assosciate(db);
+        
+        if(db[modelName].associate) {
+            db[modelName].associate(db);
         }
     });
 

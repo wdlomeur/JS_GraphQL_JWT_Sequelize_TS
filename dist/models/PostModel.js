@@ -33,6 +33,15 @@ exports.default = (sequelize, Datatype) => {
                 name: 'author'
             }
         });
+        /*
+        Post.hasMany(models.User, {
+            as: 'parentChildren',
+            foreignKey: {
+                allowNull: false,
+                field: 'author'
+            },
+            onDelete: 'CASCADE'
+        });*/
     };
     return Post;
 };
