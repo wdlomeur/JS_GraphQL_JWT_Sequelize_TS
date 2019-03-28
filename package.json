@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
-    "dev": "set NODE_ENV=development && nodemon --delay 10 dist/index"
+    "dev": "set NODE_ENV=development && nodemon --delay 3 dist/index"
   },
   "keywords": [],
   "author": "Wagner Diniz",

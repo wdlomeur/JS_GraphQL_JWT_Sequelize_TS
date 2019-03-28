@@ -1,5 +1,6 @@
 import * as http from 'http';
 import app from './app';
+
 import db from './models';
 import { normalizePort, onError, onListening } from './utils/utils';
 

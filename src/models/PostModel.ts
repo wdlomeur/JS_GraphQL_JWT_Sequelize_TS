@@ -13,10 +13,9 @@ export interface PostAttributes {
     updatedAt?: string;
 }
 
+export interface PostInstace extends Sequelize.Instance<PostAttributes> { }
 
-export interface PostInstace extends Sequelize.Instance<PostAttributes>{}
-
-export interface PostModel extends BaseModelInterface, Sequelize.Model<PostInstace, PostAttributes>{}
+export interface PostModel extends BaseModelInterface, Sequelize.Model<PostInstace, PostAttributes> { }
 
 export default(sequelize: Sequelize.Sequelize, Datatype: Sequelize.DataTypes) : PostModel => {
     const Post: PostModel = sequelize.define('Post', {
@@ -54,15 +53,7 @@ export default(sequelize: Sequelize.Sequelize, Datatype: Sequelize.DataTypes) : 
                 name: 'author'
             }
         });
-        /*
-        Post.hasMany(models.User, {
-            as: 'parentChildren',
-            foreignKey: {
-                allowNull: false,
-                field: 'author'
-            },
-            onDelete: 'CASCADE'
-        });*/
+    
     }
     
     return Post;
