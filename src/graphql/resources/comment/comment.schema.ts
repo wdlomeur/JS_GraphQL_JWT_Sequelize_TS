@@ -7,10 +7,11 @@ const commentTypes = `
         user: User!
         post: Post!
     }
-    
+
     input CommentInput {
         comment: String!
         post: Int!
+        user: Int!
     }
 `;
 
@@ -19,13 +20,13 @@ const commentQueries = `
 `;
 
 const commentMutations = `
-    createComent(input: CommentInput!): Comment
+    createComment(input: CommentInput!): Comment
     updateComment(id: ID!, input: CommentInput!): Comment
     deleteComment(id: ID!): Boolean
 `;
 
-export {
+export  {
     commentTypes,
     commentQueries,
     commentMutations
-}
+};
