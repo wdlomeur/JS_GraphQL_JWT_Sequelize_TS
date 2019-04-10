@@ -7,26 +7,25 @@ const commentTypes = `
         user: User!
         post: Post!
     }
-
+    
     input CommentInput {
         comment: String!
         post: Int!
-        user: Int!
     }
 `;
 
-const commnetQueries = `
+const commentQueries = `
     commentsByPost(postId: ID!, first: Int, offset: Int): [ Comment! ]!
 `;
 
 const commentMutations = `
-    createCommnet(input: CommentInput!): Comment
+    createComent(input: CommentInput!): Comment
     updateComment(id: ID!, input: CommentInput!): Comment
     deleteComment(id: ID!): Boolean
 `;
 
-export  {
+export {
     commentTypes,
-    commnetQueries,
+    commentQueries,
     commentMutations
 }

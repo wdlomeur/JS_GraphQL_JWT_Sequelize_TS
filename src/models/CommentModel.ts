@@ -43,7 +43,7 @@ export default (sequelize: Sequelize.Sequelize, DataTypes: Sequelize.DataTypes):
                 field: 'post',
                 name: 'post'
             }
-        });
+        }),
 
         Comment.belongsTo(models.User, {
             foreignKey: {

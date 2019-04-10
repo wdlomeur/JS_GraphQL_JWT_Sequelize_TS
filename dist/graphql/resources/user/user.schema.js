@@ -3,18 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const userTypes = `
     # User definition type    
     type User {
-        # Id do usuário
         id: ID!
-        # Nome do usuário
         name: String!
-        # E-mail do usuário
         email: String!
-        # Foto é opcional ao criar um perfil, mas obrigatório na postagem
         photo: String
-        # Data de criação
         createdAt: String!
-        # Data da ultima atualização
         updatedAt: String!
+        posts(first: Int, offset: Int): [ Post! ]!
     }
 
     input UserCreateInput {
@@ -41,7 +36,7 @@ const userQueries = `
 exports.userQueries = userQueries;
 const userMutations = `
     createUser(input: UserCreateInput!): User
-    updateUser(id: ID!, input: UserUpdateInput!): User
+    updateUser(id: ID!, Input: UserUpdateInput!): User
     updateUserPassword(id: ID, input: UserUpdatePasswordInput!): Boolean
     deleteUser(id: ID!):  Boolean
 `;

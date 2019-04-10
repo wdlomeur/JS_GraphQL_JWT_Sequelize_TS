@@ -22,14 +22,14 @@ exports.default = (sequelize, DataTypes) => {
                 field: 'post',
                 name: 'post'
             }
-        });
-        Comment.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false,
-                field: 'user',
-                name: 'user'
-            }
-        });
+        }),
+            Comment.belongsTo(models.User, {
+                foreignKey: {
+                    allowNull: false,
+                    field: 'user',
+                    name: 'user'
+                }
+            });
     };
     return Comment;
 };
